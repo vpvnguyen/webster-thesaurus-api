@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+      <!-- link jquery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script>
+        // search term
+        var searchQuery = 'happy';
+
+        // key to api
+        var apiKey = '#';
+
+        // search term with apikey
+        var apiRoute = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${searchQuery}?key=${apiKey}`;
+        $.get({
+            url: apiRoute
+        }).done(function (response) {
+            // check console for return obj
+            console.log(response);
+        });
+    </script>
+</body>
+
+</html>
