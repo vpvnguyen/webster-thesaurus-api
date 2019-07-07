@@ -12,20 +12,27 @@
 </head>
 
 <body>
+    <div id="root"></div>
     <script>
         // search term; replace string with keyword to be searched
         var searchQuery = 'happy';
 
+<<<<<<< HEAD
         // key to api
         var apiKey = 'YOUR_KEY_HERE';
 
         // search term with apikey
         var apiRoute = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${searchQuery}?key=${apiKey}`;
+=======
+        // url, no apikey needed
+        var apiRoute = `http://api.urbandictionary.com/v0/define?term=${searchQuery}`;
+>>>>>>> bd9bc5d5e43f5699e6ab09fd97d7d9e26bb597eb
         $.get({
             url: apiRoute
         }).done(function (response) {
             // check console for return obj
             console.log(response);
+            $('#root').html(JSON.parse(response.data))
         });
     </script>
 </body>
